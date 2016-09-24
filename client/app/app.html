@@ -1,0 +1,66 @@
+<div layout="column" style="height:100%" data-ng-cloak>
+  <navbar></navbar>
+  <section layout="row" flex>
+    <md-sidenav
+      class="md-sidenav-left md-whiteframe-4dp"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-whiteframe="4">
+      <md-toolbar hide-gt-md>
+        <h1 class="md-toolbar-tools">Navigation</h1>
+      </md-toolbar>
+      <md-content layout-padding layout="column">
+        <a class="md-button"
+           data-ng-click="$ctrl.toggle('left')"
+           data-ui-sref="home"
+           data-ui-sref-active="md-warn"
+           data-ng-bind="'HOME' | translate">
+        </a>
+        <a class="md-button"
+           data-ng-click="$ctrl.toggle('left')"
+           data-ui-sref="skills"
+           data-ui-sref-active="md-warn"
+           data-ng-bind="'SKILLS' | translate">
+        </a>
+        <a class="md-button"
+           data-ng-click="$ctrl.toggle('left')"
+           data-ui-sref="about"
+           data-ui-sref-active="md-warn">
+          Github
+        </a>
+        <a class="md-button"
+           data-ng-click="$ctrl.toggle('left')"
+           data-ui-sref="contact"
+           data-ui-sref-active="md-warn"
+           data-ng-bind="'CONTACT' | translate">
+        </a>
+        <a class="md-button"
+           data-ng-click="$ctrl.toggle('left')"
+           hide-gt-md ng-bind="'CLOSE' | translate">
+        </a>
+      </md-content>
+    </md-sidenav>
+    <md-content flex layout-padding layout="column" ui-view>
+      <!--<div>-->
+        <!--<a data-ng-click="$ctrl.toggle('right')"-->
+           <!--class="md-button md-primary">-->
+          <!--Toggle right-->
+        <!--</a>-->
+      <!--</div>-->
+    </md-content>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content layout-padding>
+        <form>
+          <md-input-container>
+            <label for="testInput">Test input</label>
+            <input type="text" id="testInput"
+                   data-ng-model="data" md-autofocus>
+          </md-input-container>
+        </form>
+      </md-content>
+    </md-sidenav>
+  </section>
+</div>

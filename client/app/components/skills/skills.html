@@ -1,0 +1,17 @@
+<h1 class="md-display-3" ng-bind="'SKILLS' | translate"></h1>
+
+<md-input-container>
+  <label>Filter skills</label>
+  <input ng-model="search.title">
+</md-input-container>
+
+<md-list>
+  <md-list-item class="md-3-line" data-ng-repeat="skill in $ctrl.skills | filter:search:strict" aria-label="accessibility" ng-click="$ctrl.goTo(this)">
+    <div class="img" style="background-image: url(assets/img/{{skill.path}}.png)"></div>
+    <div class="md-list-item-text" layout="column">
+      <h3 data-ng-bind="::skill.title"></h3>
+      <h4 data-ng-bind="::skill.tag"></h4>
+    </div>
+    <md-divider></md-divider>
+  </md-list-item>
+</md-list>

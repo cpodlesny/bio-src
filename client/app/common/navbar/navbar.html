@@ -1,0 +1,40 @@
+<md-toolbar class="md-whiteframe-14dp">
+  <div class="md-toolbar-tools">
+    <a class="md-button md-icon-button"
+       aria-label="Settings"
+       data-hide-gt-md
+       data-ng-click="$ctrl.toggle('left')">
+      <md-icon data-md-svg-icon="menu"></md-icon>
+    </a>
+    <h2>
+      <span>Constantine Podlesny</span>
+    </h2>
+    <span flex></span>
+    <a class="md-button"
+       data-hide-xs
+       data-ng-class="{'md-warn': $ctrl.currentLanguage === 'de'}"
+       data-ng-click="$ctrl.changeLanguage('de')">
+      DE
+    </a>
+    <a class="md-button"
+       data-hide-xs
+       data-ng-class="{'md-warn': $ctrl.currentLanguage === 'en'}"
+       data-ng-click="$ctrl.changeLanguage('en')">
+      EN
+    </a>
+    <img class="user"
+         data-ng-show="$ctrl.isSigned"
+         data-ng-src="{{$ctrl.userAvater}}"
+         alt="{{$ctrl.userName}}"/>
+    <a class="md-button"
+       data-ng-show="!$ctrl.isSigned"
+       data-ng-click="$ctrl.chooseAuth()">
+      <md-icon data-md-svg-icon="sign_in"></md-icon>
+    </a>
+    <a class="md-button"
+       data-ng-show="$ctrl.isSigned"
+       data-ng-click="$ctrl.logOut()">
+      <md-icon data-md-svg-icon="sign_out"></md-icon>
+    </a>
+  </div>
+</md-toolbar>

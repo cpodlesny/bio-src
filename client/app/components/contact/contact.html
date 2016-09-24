@@ -1,0 +1,17 @@
+<h1 class="md-display-3" ng-bind="'CONTACT' | translate"></h1>
+
+<md-list flex>
+  <md-list-item class="md-2-line" ng-repeat="contact in $ctrl.contacts">
+    <md-icon md-svg-icon="{{contact.type}}" ng-if="contact.type"></md-icon>
+    <!--<img ng-src="{{phone.options.face}}?25" class="md-avatar" alt="{{phone.options.face}}"-->
+         <!--ng-if="phone.options.face"/>-->
+    <!--ng-class="{'md-offset': phone.options.offset }"-->
+    <div class="md-list-item-text" >
+      <h3 data-ng-bind="::contact.entity"></h3>
+      <p data-ng-bind="::contact.type"></p>
+    </div>
+    <md-button data-ng-href="{{contact.obj}}" class="md-secondary md-icon-button" data-ng-if="contact.action" aria-label="call">
+      <md-icon md-svg-icon="{{contact.action}}"></md-icon>
+    </md-button>
+  </md-list-item>
+</md-list>
